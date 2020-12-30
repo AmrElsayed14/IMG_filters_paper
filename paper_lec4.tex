@@ -1,0 +1,84 @@
+% Created 2020-12-30 Mi 18:23
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\affiliation{<Your school, think tank, etc>}
+\shorttitle{<A short version of the long title for page headers>}
+\usepackage{breakcites}
+\usepackage{apacite}
+\usepackage{paralist}
+\let\itemize\compactitem
+\let\description\compactdesc
+\let\enumerate\compactenum
+\author{Amr Elsayed}
+\date{\today}
+\title{Chapter 3}
+\hypersetup{
+ pdfauthor={Amr Elsayed},
+ pdftitle={Chapter 3},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{ABSTRACT}
+
+
+\textbf{Abstract}
+\end{ABSTRACT}
+\tableofcontents
+\section{Histogram procesing}
+\label{sec:org0b15f5c}
+we represent pictures using M x N pixels and each pixel has an integer value. and if you want to have general idea how the intensities is distriduted,we create histrogram
+\subsection{{\bfseries\sffamily TODO} unnormalized histogram}
+\label{sec:orgefc4ce4}
+\subsection{normalized histogram}
+\label{sec:orgc056583}
+\subsection{example about histograms}
+\label{sec:org113db7a}
+\subsection{{\bfseries\sffamily TODO} Histogram equalization}
+\label{sec:org6764ed9}
+equations
+coding part (Histo.py)
+\section{Fundamentals of spatial filtering}
+\label{sec:org6c9155f}
+The name filter is borrowed from frequency domain processing where “filtering” refers to passing, modifying,
+or rejecting specified frequency components of an image. For example, a filter that passes low frequencies is called a lowpass filter.
+The net effect produced by a lowpass filter is to smooth an image by blurring it. We can accomplish similar smoothing directly on the
+image itself by using spatial filters.
+Spatial filtering modifies an image by replacing the value of each pixel by a function of the values of the pixel and its neighbors. If the
+operation performed on the image pixels is linear, then the filter is called a linear spatial filter. Otherwise, the filter is a nonlinear spatial
+filter. We will focus attention first on linear filters and then introduce some basic nonlinear filters. 
+\subsection{linear filtering}
+\label{sec:org6b048eb}
+kernel
+\subsection{image padding}
+\label{sec:orged3b9c5}
+\subsection{correlation and convolution}
+\label{sec:orgd0b09bb}
+\subsection{Gaussian Filter}
+\label{sec:org5a6b1d2}
+    A Gaussian filter is a linear filter. It's usually used to blur the image or to reduce noise. If you use two of them and subtract,
+    you can use them for "unsharp masking" (edge detection).
+    The Gaussian filter alone will blur edges and reduce contrast.
+The Median filter is a non-linear filter that is most commonly used as a simple way to reduce noise in an image.
+It's claim to fame (over Gaussian for noise reduction)
+is that it removes noise while keeping edges relatively sharp.
+I guess the one advantage a Gaussian filter has over a median filter is that it's faster because multiplying and adding is probably faster than sorting.
+\end{document}
