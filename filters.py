@@ -21,7 +21,7 @@ def Gaussian_filter(img):
         plt.xticks([]), plt.yticks([])
 
 
-img = cv2.imread('equ_res.jpg')
+img = cv2.imread('./img/equ_res.jpg')
 
 #blur = cv2.blur(img,(5,5))
 #      |1 1 1 1 1|

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('2.jpg',0)
+img = cv2.imread('./img/2.jpg',0)
 
 hist,bins = np.histogram(img.flatten(),256,[0,256])
 
@@ -15,8 +15,8 @@ plt.xlim([0,256])
 plt.legend(('cdf','histogram'), loc = 'upper left')
 equ = cv2.equalizeHist(img)
 res = np.hstack((img,equ)) #stacking images side-by-side
-cv2.imwrite('equ_res.jpg',equ)
-cv2.imwrite('res.png',res)
+cv2.imwrite('./img/equ_res.jpg',equ)
+cv2.imwrite('./img/res.png',res)
 #cdf2 = equ.cumsum()
 #cdf_normalized2 = cdf2 * equ.max()/ cdf2.max()
 plt.subplot(2,1,2)

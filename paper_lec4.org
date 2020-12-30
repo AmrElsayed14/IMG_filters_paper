@@ -2,8 +2,9 @@
 #+AUTHOR: Amr Elsayed
 #+BIBILOGRAPHY: library.bib 
 #+LaTeX_CLASS_OPTIONS: [a4paper]
-#+LaTeX_HEADER: \affiliation{<Your school, think tank, etc>}
-#+LaTeX_HEADER: \shorttitle{<A short version of the long title for page headers>}
+LaTeX_class: apa6
+LaTeX_HEADER: \affiliation{<Your school, think tank, etc>}
+LaTeX_HEADER: \shorttitle{<A short version of the long title for page headers>}
 #+LaTeX_HEADER: \usepackage{breakcites}
 #+LaTeX_HEADER: \usepackage{apacite}
 #+LaTeX_HEADER: \usepackage{paralist}
@@ -12,19 +13,34 @@
 #+LaTeX_HEADER: \let\enumerate\compactenum
 
 #+BEGIN_ABSTRACT
-
 *Abstract*
 
 #+END_ABSTRACT
 #+LaTeX: \tableofcontents
 * Histogram procesing
-  we represent pictures using M x N pixels and each pixel has an integer value. and if you want to have general idea how the intensities is distriduted,we create histrogram
-** TODO unnormalized histogram
-** normalized histogram
-** example about histograms
+  we represent pictures using M x N pixels and each pixel has an integer value.
+  If you want to have general idea how the intensities is distributed,we have to create histogram.
+** Histogram Example
+   #+CAPTION: Example on the importance of histograms
+   #+NAME:  Histogram_example 
+   [[./img/histogram_example.png]]
+
+   importance of histogram that you can predict how will be your picture.
+   for example if the whole data is shifted to left so it will be dark picture.
+   if it is shifted to right it will be light image
+   if its in the middle so it will be low contrast image.
+   We can use histogram equalization to distribute the data in histogram to get high contrast as we will see in the next section.
+
 ** TODO Histogram equalization
-   equations
-   coding part (Histo.py)
+   In this section we will talk about histogram equalization.
+   
+   _*importance*_
+
+   to get higher contrast of the picture.
+   we used python code [Histo.py] to represent the idea.
+   #+CAPTION: Example on the importance of histograms
+   #+NAME: result of histogram equalization 
+   [[./img/res.png]]
 * Fundamentals of spatial filtering
 The name filter is borrowed from frequency domain processing where “filtering” refers to passing, modifying,
 or rejecting specified frequency components of an image. For example, a filter that passes low frequencies is called a lowpass filter.
