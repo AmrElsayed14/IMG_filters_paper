@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 def box_kernel(img):
     plt.subplot(221),plt.imshow(img),plt.title('Original')
     plt.xticks([]), plt.yticks([])
-    sizes = [3,5,11]
+    sizes = [41,81,121]
     for index,i in enumerate(sizes):
         blur = cv2.blur(img,(i,i))
         plt.subplot(2,2,index+2),plt.imshow(blur),plt.title('average Blurred')
@@ -14,14 +14,17 @@ def box_kernel(img):
 def Gaussian_filter(img):
     plt.subplot(221),plt.imshow(img),plt.title('Original 2')
     plt.xticks([]), plt.yticks([])
-    sizes = [3,5,11]
+    sizes = [41,81,121]
+    sigma = 7
     for index,i in enumerate(sizes):
-        blur = cv2.GaussianBlur(img,(i,i),0)
-        plt.subplot(2,2,index+2),plt.imshow(blur),plt.title('Gaussian Blurred')
+        blur = cv2.GaussianBlur(img,(i,i),sigma)
+        plt.subplot(2,2,index+2),plt.imshow(blur),plt.title('kernel size = '  + str(i) + ", " + "sigma = " + str(sigma))
         plt.xticks([]), plt.yticks([])
 
+    
 
-img = cv2.imread('./img/equ_res.jpg')
+
+img = cv2.imread('./img/unnamed.jpg')
 
 #blur = cv2.blur(img,(5,5))
 #      |1 1 1 1 1|
@@ -31,7 +34,9 @@ img = cv2.imread('./img/equ_res.jpg')
 #      |1 1 1 1 1|
 
 
-box_kernel(img)
-plt.show()
+#box_kernel(img)
+#plt.show()
 Gaussian_filter(img)
+
+#cv2.imwrite('./img/sigma0.jpg',)
 plt.show()
